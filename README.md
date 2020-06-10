@@ -1,2 +1,10 @@
-# Multi-address_geocoding
-Multi-address geocoding
+# Multi-address geocoding Research Institution
+
+For a recent post I wrote about the ["State of R&D on COVID-19 and its impact on aging"](http://www.madrimasd.org/blogs/envejecer-positivo/2020/06/03/2343/), one of the aspects that was considered in data analysis was the display on a world map of COVID-19 research focus. So the institutions or research centres that have developed the greatest scientific production since the pandemic began in 2020 were on the map. This data was provided by the [Web of Science](https://clarivate.com/webofsciencegroup/solutions/web-of-science/) (WoS), which among other data provides the name of the Institutions or Organizations from which the scientific articles come. To locate each of these research institutions (in this case there were more than 6,300 names in the query) and to obtain their geographical points and be able to position them on a map, it was necessary to develop a geocoding methodology in Python. Most commonly in these cases is to use the Google maps API to get the coordinates (latitude and longitude) from a name or address. However, Google limits free queries to about 1,000 so you had to find an alternative that didn't have that restriction.
+
+After testing different libraries, I prefer to choice [geopy](https://geopy.readthedocs.io/en/stable/) that has different geocoders and is quite flexible for use and programming. From here, a function is developed to automate queries and move to the dataset with the names of the different Institutions from which to get the coordinates into two new added variables (Latitude and Longitude). From that data we can represent them in a world map, in my case I did it with Tableau but it could also be done with Folium, Ploty, etc.
+The main ideas you can extract from this post can be:
+-	Geocoding basic concepts
+-	Use of the geopy library and its integration with pandas
+-	Use of the different free geocoders, focusing mainly on two examples with and without the use of apikeys.
+-	Advantages and disadvantages of using these free alternatives with this example.
